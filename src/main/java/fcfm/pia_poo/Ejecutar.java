@@ -1,5 +1,4 @@
 /*
- * Copyright (C) 2020 Sergio Andrés <sergio.elizondord at uanl.edu.mx>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
