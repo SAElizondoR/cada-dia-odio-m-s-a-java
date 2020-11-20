@@ -16,10 +16,6 @@
  */
 package fcfm.pia_poo;
 
-/**
- *
- * @author Sergio Andrés <sergio.elizondord at uanl.edu.mx>
- */
 public class Ejecutar {
 
     /**
