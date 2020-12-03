@@ -40,6 +40,37 @@ public class UsuarioDAO {
         }
     }
     
+    public boolean agregarUsuario(Usuario usuario) {
+        if (estaIdUsuario(usuario.getId())) {
+            return false;
+        }
+        arrusuario.add(usuario);
+        return true;
+    }
+    
+    public boolean modificarCliente(Usuario usuario) {
+        for (int i = 0; i < arrusuario.size(); i++) {
+            if(arrusuario.get(i).getId() == usuario.getId()) {
+                arrusuario.set(i, usuario);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean estaIdUsuario(int id) {
+        return arrusuario.stream().anyMatch(u -> (u.getId() == id));
+    }
+    
+    public Usuario buscarUsuario(int id) {
+        for (Usuario u: arrusuario) {
+            if (u.getId() == id) {
+                return u;
+            }
+        }
+        return null;
+    }
+    
     public ArrayList<Usuario> getArrayUsuario() {
         return arrusuario;
     }
