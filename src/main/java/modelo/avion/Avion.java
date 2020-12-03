@@ -24,6 +24,10 @@ public class Avion {
         
     }
     
+    public Avion(int id) {
+        
+    }
+    
     public Avion(int id, String modelo, int numpasajeros)
     {
         this.id=id;

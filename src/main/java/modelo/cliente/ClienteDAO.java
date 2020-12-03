@@ -49,7 +49,7 @@ public class ClienteDAO {
     }
     
     public boolean agregarCliente(Cliente cliente) {
-        if (estaId(cliente.getId())) {
+        if (estaIdCliente(cliente.getId())) {
             return false;
         }
         arrcliente.add(cliente);
@@ -58,7 +58,7 @@ public class ClienteDAO {
     
     public boolean modificarCliente(Cliente cliente) {
         for (Cliente c: arrcliente) {
-            if(estaId(cliente.getId())) {
+            if(estaIdCliente(cliente.getId())) {
                 c = cliente;
                 return true;
             }
@@ -66,7 +66,7 @@ public class ClienteDAO {
         return false;
     }
     
-    private boolean estaId(int id) {
+    public boolean estaIdCliente(int id) {
         return arrcliente.stream().anyMatch(c -> (c.getId() == id));
     }
     

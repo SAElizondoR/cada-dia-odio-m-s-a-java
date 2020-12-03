@@ -41,15 +41,24 @@ public class AvionDAO {
     }
     
     public boolean agregarAvion(Avion avion) {
-        if (estaId(avion.getId())) {
+        if (estaIdAvion(avion.getId())) {
             return false;
         }
         arravion.add(avion);
         return true;
     }
     
-    private boolean estaId(int id) {
+    public boolean estaIdAvion(int id) {
         return arravion.stream().anyMatch(a -> (a.getId() == id));
+    }
+    
+    public Avion buscarAvion(int id) {
+        for (Avion a: arravion) {
+            if (a.getId() == id) {
+                return a;
+            }
+        }
+        return null;
     }
     
     public ArrayList<Avion> getArrayAvion() {
