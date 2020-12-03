@@ -71,6 +71,15 @@ public class ViajeDAO {
         return arrviaje.stream().anyMatch(v -> (v.getId() == id));
     }
     
+    public Viaje buscarViaje(int id) {
+        for (Viaje v: arrviaje) {
+            if (v.getId() == id) {
+                return v;
+            }
+        }
+        return null;
+    }
+    
     public ArrayList<Viaje> getArrayViaje () {
         return arrviaje;
     }

@@ -21,7 +21,8 @@ import modelo.avion.Avion;
 
 public class Viaje {
     
-    private int id;    private Avion avion;
+    private int id;
+    private Avion avion;
     private String origen;
     private String destino;
     private Date dateorigen = new Date();
@@ -36,6 +37,10 @@ public class Viaje {
         this.dateorigen=dateorigen;
         this.datedestino=datedestino;
         this.asientosdisponibles=asientosdisponibles;
+    }
+    
+    public void reducirAsientos() {
+        asientosdisponibles--;
     }
     
     /**

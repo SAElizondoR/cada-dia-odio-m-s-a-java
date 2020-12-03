@@ -70,6 +70,15 @@ public class ClienteDAO {
         return arrcliente.stream().anyMatch(c -> (c.getId() == id));
     }
     
+    public Cliente buscarCliente(int id) {
+        for (Cliente c: arrcliente) {
+            if (c.getId() == id) {
+                return c;
+            }
+        }
+        return null;
+    }
+    
     public ArrayList<Cliente> getArrayCliente () {
         return arrcliente;
     }
