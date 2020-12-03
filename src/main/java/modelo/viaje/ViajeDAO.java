@@ -60,7 +60,7 @@ public class ViajeDAO {
     }
     
     public boolean agregarViaje(Viaje viaje) {
-        if (estaIdViaje(viaje.getId())) {
+        if (estaIdViaje(viaje.getId()) || !avionValido(viaje)) {
             return false;
         }
         arrviaje.add(viaje);
@@ -69,6 +69,12 @@ public class ViajeDAO {
     
     public boolean estaIdViaje(int id) {
         return arrviaje.stream().anyMatch(v -> (v.getId() == id));
+    }
+    
+    public boolean avionValido(Viaje viaje) {
+        return arrviaje.stream().filter(v -> (v.getAvion().getId() == viaje.getAvion().getId()))
+                .noneMatch(v ->(v.getDateorigen().compareTo(viaje.getDatedestino()) <= 0 &&
+                        v.getDatedestino().compareTo(viaje.getDateorigen()) >= 0));
     }
     
     public Viaje buscarViaje(int id) {
