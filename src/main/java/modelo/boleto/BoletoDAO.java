@@ -65,4 +65,13 @@ public class BoletoDAO {
         return arrboleto;
     }
     
+    public ArrayList<Cliente> getArrayClientesByViajeId(int id) {
+        ArrayList<Cliente> arrclienteid=new ArrayList<>();
+        
+        arrboleto.stream().filter(boleto -> (boleto.getViaje().getId() == id)).forEachOrdered(boleto -> {
+            arrclienteid.add(boleto.getCliente());
+        });
+        return arrclienteid;
+    }
+    
 }

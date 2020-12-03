@@ -57,9 +57,9 @@ public class ClienteDAO {
     }
     
     public boolean modificarCliente(Cliente cliente) {
-        for (Cliente c: arrcliente) {
-            if(estaIdCliente(cliente.getId())) {
-                c = cliente;
+        for (int i = 0; i < arrcliente.size(); i++) {
+            if(arrcliente.get(i).getId() == cliente.getId()) {
+                arrcliente.set(i, cliente);
                 return true;
             }
         }
