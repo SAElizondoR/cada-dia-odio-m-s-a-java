@@ -25,6 +25,10 @@ public class Cliente {
     private String rfc;
     private String direccion;
     
+    public Cliente() {
+        
+    }
+    
     public Cliente(int id, String nombre, String apellidop,String apellidom,String curp,String rfc,String direccion) {
         this.id=id;
         this.nombre=nombre;

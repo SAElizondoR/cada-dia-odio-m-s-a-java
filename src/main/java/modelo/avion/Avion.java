@@ -12,24 +12,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package modelo.usuario;
+package modelo.avion;
 
-public class Usuario {
-    
+public class Avion {
+        
     private int id;
-    private String email;
-    private String password;
-    
-    public Usuario() {
+    private String modelo;
+    private int numpasajeros;
+
+    public Avion() {
         
     }
     
-    public Usuario(int id,String email,String password) {
+    public Avion(int id, String modelo, int numpasajeros)
+    {
         this.id=id;
-        this.email=email;
-        this.password=password;
+        this.modelo=modelo;
+        this.numpasajeros=numpasajeros;
     }
-    
 
     /**
      * @return the id
@@ -46,32 +46,31 @@ public class Usuario {
     }
 
     /**
-     * @return the email
+     * @return the modelo
      */
-    public String getEmail() {
-        return email;
+    public String getModelo() {
+        return modelo;
     }
 
     /**
-     * @param email the email to set
+     * @param modelo the modelo to set
      */
-    public void setEmail(String email) {
-        this.email = email;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
     /**
-     * @return the password
+     * @return the numpasajeros
      */
-    public String getPassword() {
-        return password;
+    public int getNumpasajeros() {
+        return numpasajeros;
     }
 
     /**
-     * @param password the password to set
+     * @param numpasajeros the numpasajeros to set
      */
-    public void setPassword(String password) {
-        this.password = password;
+    public void setNumpasajeros(int numpasajeros) {
+        this.numpasajeros = numpasajeros;
     }
-    
-    
+
 }

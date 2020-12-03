@@ -67,12 +67,7 @@ public class ClienteDAO {
     }
     
     private boolean estaId(int id) {
-        for(Cliente c: arrcliente) {
-            if(c.getId() == id) {
-                return true;
-            }
-        }
-        return false;
+        return arrcliente.stream().anyMatch(c -> (c.getId() == id));
     }
     
     public ArrayList<Cliente> getArrayCliente () {
